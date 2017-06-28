@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/test.html"],"names":[],"mappings":";;;;;AAAA,2EAA2E,MAAM,e","file":"3.init.js","sourcesContent":["module.exports = \"<div ng-controller=testController xxxxxx> 1111111 <div>{{test}}</div> </div>\";\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/test.html\n// module id = 106\n// module chunks = 3"],"sourceRoot":""}
