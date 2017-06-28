@@ -1,12 +1,12 @@
-webpackJsonp([0,1,3],{
+webpackJsonp([0,2,5],{
 
-/***/ 101:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(109);
+var content = __webpack_require__(112);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -14,7 +14,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(110)(content, options);
+var update = __webpack_require__(113)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -32,7 +32,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 109:
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -47,7 +47,7 @@ exports.push([module.i, "body {\n  background-color: grey; }\n", ""]);
 
 /***/ }),
 
-/***/ 110:
+/***/ 113:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -93,7 +93,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(111);
+var	fixUrls = __webpack_require__(114);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -407,7 +407,7 @@ function updateLink (link, options, obj) {
 
 /***/ }),
 
-/***/ 111:
+/***/ 114:
 /***/ (function(module, exports) {
 
 
@@ -503,13 +503,6 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ 23:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "./images/308f8059a619298f2e1c1ecb54b42d20.jpg";
-
-/***/ }),
-
 /***/ 33:
 /***/ (function(module, exports) {
 
@@ -594,9 +587,9 @@ function toComment(sourceMap) {
 /***/ }),
 
 /***/ 34:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = "<div ng-controller=mainController> {{index}} <button ui-sref=.login>login</button> <div ui-view 123321></div> <img src=" + __webpack_require__(23) + " /> </div>";
+module.exports = "<div ng-controller=mainController> <div ui-view></div> </div>";
 
 /***/ }),
 
@@ -608,11 +601,17 @@ Promise.all([
     new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 67)),
     // jshint ignore:end
 ]).then(function([{app}]) { 
-    app.register.controller('mainController', ['$scope', '$uiRouter', '$state', '$stateRegistry', function($scope, $uiRouter, $state, $stateRegistry) {
+    app.register.controller('mainController', ['$scope', '$uiRouter', '$state', '$stateRegistry', '$location', 
+        function($scope, $uiRouter, $state, $stateRegistry, $location) {
 
-        console.log($uiRouter, $state, $stateRegistry);
-        $scope.index = 'this is index';
-    }]);
+            console.log($uiRouter, $state, $stateRegistry, $location);
+            var init = function() {
+
+            };
+
+            init();
+        }
+    ]);
 
 }).catch(function(err) {
     console.log(err);

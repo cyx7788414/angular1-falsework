@@ -19,7 +19,7 @@ app.config(['$controllerProvider', '$compileProvider', '$filterProvider', '$prov
 
 app.config(['$stateProvider', '$urlRouterProvider', //ui-route的导航设置
     function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/');//默认转到 
+        $urlRouterProvider.otherwise('/fore/index');//默认转到 
 
         // $stateProvider.decorator('views', function(state, getViews) {//动态加载
         //     var views = getViews(state);

@@ -63,12 +63,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 98);
+/******/ 	return __webpack_require__(__webpack_require__.s = 99);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 23:
+/***/ 32:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "./images/308f8059a619298f2e1c1ecb54b42d20.jpg";
@@ -181,14 +181,14 @@ exports = module.exports = __webpack_require__(33)(undefined);
 
 
 // module
-exports.push([module.i, "div {background-color: #fff;background-image: url(" + __webpack_require__(23) + ");}", ""]);
+exports.push([module.i, "div {background-color: #fff;background-image: url(" + __webpack_require__(32) + ");}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 98:
+/***/ 99:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = `
@@ -211,7 +211,7 @@ module.exports = `
 <h2>推荐chrome或firefox</h2>
 <a href="/">点击返回首页</a>
 <div></div>
-<img src="${__webpack_require__(23)}"/>
+<img src="${__webpack_require__(32)}"/>
 </body>
 </html>
 `;

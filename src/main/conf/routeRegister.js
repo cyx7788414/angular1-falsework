@@ -1,6 +1,7 @@
 define(function() {
 
     var registList = [//在此注册路径名
+        'main/conf/main',
         'test'
     ];
 
