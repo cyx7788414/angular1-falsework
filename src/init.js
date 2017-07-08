@@ -1,9 +1,12 @@
 import 'es6-promise/auto';
 
-var angular = require('angular');
-var uiRoute = require('@uirouter/angularjs');
+import 'bootstrap-loader';
 
-var app = angular.module('mainModule', ['ui.router']);
+import angular from 'angular';
+import uiRoute from '@uirouter/angularjs';
+import uiBootstrap from 'angular-ui-bootstrap';
+
+var app = angular.module('mainModule', ['ui.router', uiBootstrap]);
 
 app.config(['$controllerProvider', '$compileProvider', '$filterProvider', '$provide', //异步加载controller等
     function($controllerProvider, $compileProvider, $filterProvider, $provide) {
@@ -19,7 +22,7 @@ app.config(['$controllerProvider', '$compileProvider', '$filterProvider', '$prov
 
 app.config(['$stateProvider', '$urlRouterProvider', //ui-route的导航设置
     function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/fore/index');//默认转到 
+        $urlRouterProvider.otherwise('/fore');//默认转到 
 
         // $stateProvider.decorator('views', function(state, getViews) {//动态加载
         //     var views = getViews(state);
@@ -50,7 +53,7 @@ app.config(['$stateProvider', '$urlRouterProvider', //ui-route的导航设置
             }]
         });
 
-        var routeRegister = require('src/main/conf/routeRegister.js');//引用各处定义的state
+        var routeRegister = require('src/main/js/routeRegister.js');//引用各处定义的state
         routeRegister($stateProvider);
 
     }
