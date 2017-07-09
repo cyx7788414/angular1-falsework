@@ -122,7 +122,7 @@ module.exports = {
         new HtmlWebpackPlugin({//首页
             forExpendFlag: 'index',
             filename: './index.html',
-            template: 'src/index.js',
+            template: 'src/indexTemplate.js',
             inject: true,
             hash: true,
             //bundleName: bundleConfig.vendor.js,
@@ -138,7 +138,7 @@ module.exports = {
         new HtmlWebpackPluginExpend({
             paths: [
                 {
-                    name: bundleConfig.vendor.js,
+                    name: 'vendor/' + bundleConfig.vendor.js,
                     exclude: []//与include只存在一个
                 }
             ]
@@ -146,7 +146,7 @@ module.exports = {
         new HtmlWebpackPlugin({//浏览器
             forExpendFlag: 'browser',
             filename: './browser.html',
-            template: 'src/main/js/browser.js',
+            template: 'src/main/js/browserTemplate.js',
             inject: true,
             hash: true,
             minify: {
