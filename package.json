@@ -28,6 +28,7 @@
     "ejs-compiled-loader": "^1.1.0",
     "ejs-loader": "^0.3.0",
     "expose-loader": "^0.7.3",
+    "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.28.0",
@@ -38,7 +39,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
-    "webpack": "^2.6.1"
+    "webpack": "^2.7.0"
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.3",
