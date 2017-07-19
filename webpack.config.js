@@ -125,6 +125,7 @@ module.exports = {
             template: 'src/indexTemplate.js',
             inject: true,
             hash: true,
+            favicon: 'src/main/images/1.jpg',
             //bundleName: bundleConfig.vendor.js,
             minify: {
                 removeComments: true,
@@ -149,6 +150,7 @@ module.exports = {
             template: 'src/main/js/browserTemplate.js',
             inject: true,
             hash: true,
+            favicon: 'src/main/images/1.jpg',
             minify: {
                 removeComments: true,
                 minifyCSS: true,
