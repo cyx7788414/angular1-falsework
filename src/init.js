@@ -8,10 +8,59 @@ import uiBootstrap from 'angular-ui-bootstrap';
 
 var app = angular.module('mainModule', ['ui.router', uiBootstrap]);
 
+//window._globalControllerLoadedFlagSet = {};//全局变量保存已加载的contrllerName，用于确保在resolve模版时controller已注入
+// app.custom = {};
+// app.custom.registController = function(name) {
+//     //window._globalControllerLoadedFlagSet[name] = true;
+// };
+window.controllerLoadChecker = function() {//全局保存已加载的contrllerName，用于确保在resolve模版时controller已注入
+    var controllerList = {};
+    var checkList = [];
+    var checkTimeout = '';
+
+    var check = function() {//检查
+        for (var x = checkList.length - 1; x >= 0; x--) {
+            if (controllerList[checkList[x].name]) {
+                checkList[x].callback();
+                checkList.splice(x, 1);
+            }
+        }
+        if (checkList.length === 0) {//没有则停止定时循环
+            checkTimeout = '';
+            return '';
+        } else {
+            return window.setTimeout(function() {
+                checkTimeout = check();
+            }, 1);
+        }
+    };
+
+    return {
+        regist: function(name) {//注册controller
+            controllerList[name] = true;
+        },
+        setCheck: function(name, callback) {//插入要检查的controller与resolve回调
+            checkList.unshift({
+                name: name,
+                callback: callback
+            });
+            if (!checkTimeout) {
+                checkTimeout = check();
+            }
+        }
+    };
+}();
+
+
 app.config(['$controllerProvider', '$compileProvider', '$filterProvider', '$provide', //异步加载controller等
     function($controllerProvider, $compileProvider, $filterProvider, $provide) {
         app.register = {
-            controller: $controllerProvider.register,
+            //controller: $controllerProvider.register,
+            controller: function() {
+                $controllerProvider.register.apply($controllerProvider, arguments);//调用原函数
+                //window._globalControllerLoadedFlagSet[arguments[0]] = true;//注入controller的name
+                window.controllerLoadChecker.regist(arguments[0]);//注入controller的name
+            },
             directive: $compileProvider.directive,
             filter: $filterProvider.register,
             factory: $provide.factory,

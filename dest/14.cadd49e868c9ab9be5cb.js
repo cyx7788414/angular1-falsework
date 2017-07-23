@@ -1,0 +1,2 @@
+webpackJsonp([14],{17:function(a){a.exports="<div ng-controller=foreController class=fore> <div ui-view=header></div> <div ui-view=body class=body></div> </div>"}});
+//# sourceMappingURL=14.cadd49e868c9ab9be5cb.js.map

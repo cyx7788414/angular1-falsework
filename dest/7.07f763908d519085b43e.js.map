@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/main/views/foreheader.html"],"names":[],"mappings":"iCAAA,U","file":"7.07f763908d519085b43e.js","sourcesContent":["module.exports = \"<div ng-controller=foreheaderController> xxxxxxx </div>\";\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/main/views/foreheader.html\n// module id = 18\n// module chunks = 7"],"sourceRoot":""}

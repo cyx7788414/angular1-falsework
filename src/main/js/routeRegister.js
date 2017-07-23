@@ -3,11 +3,32 @@ define(function() {
     var registList = require('src/main/conf/statefileRegister.js');
 
     var getLoad = function(state, $stateProvider) { //返回延迟加载函数
-        var load = ['$q', function($q) {
+        var load = ['$q', '$stateParams', function($q, $stateParams) {
+            var array = [];
+            var basePath = '';
+            var paramsUrl = '';
+            if (state.variables && state.variables.length > 0) {//url带参数
+                for (var x = 0; x < state.variables.length; x++) {
+                    array.push($stateParams[state.variables[x]]);
+                }
+                paramsUrl =  array.join('/');
+            }
+            basePath = state.basePath + paramsUrl;
+            var controllerName = basePath.split('/').pop() + 'Controller';
             var defer = $q.defer();
-            $q.all([import('src/' + state.basePath + '.html'), import('src/' + state.basePath + 'Controller.js')]).then(function(resource) {// jshint ignore:line
-                defer.resolve({
-                    template: resource[0]
+            $q.all([import('src/' + basePath + '.html'), import('src/' + basePath + 'Controller.js')]).then(function(resource) {// jshint ignore:line
+                // var checkControllerInterval = window.setInterval(function() {//检查是否加载完成Controller的依赖，用于确保在resolve模版时controller已注入
+                //     if (window._globalControllerLoadedFlagSet[controllerName]) {
+                //         window.clearInterval(checkControllerInterval);
+                //         defer.resolve({
+                //             template: resource[0]
+                //         });
+                //     }
+                // }, 1);
+                window.controllerLoadChecker.setCheck(controllerName, function() {//检查是否加载完成Controller的依赖，用于确保在resolve模版时controller已注入
+                    defer.resolve({
+                        template: resource[0]
+                    });
                 });
             }).catch(function(err) {
                 console.log(err);
@@ -26,7 +47,7 @@ define(function() {
 
     var setLoadAndTemplateProvider = function($stateProvider, target, itemInfo, belongToStates) {//设置load和templateProvider
         target.templateProvider = getTemplateProvider(itemInfo.name);
-        if (belongToStates) {
+        if (belongToStates) {//views的resolve要写在外面
             if (!belongToStates.resolve) {
                 belongToStates.resolve = {};
             }

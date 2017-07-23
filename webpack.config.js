@@ -64,8 +64,14 @@ module.exports = {
                         loader: "style-loader"
                     }, 
                     {
-                        loader: "css-loader"
+                        loader: "css-loader",
+                        // options: {
+                        //     importLoaders: 1
+                        // }
                     }, 
+                    {
+                        loader: "postcss-loader"
+                    },
                     {
                         loader: "sass-loader"
                     }
@@ -160,11 +166,12 @@ module.exports = {
             },
             chunks:['browser']
         }),
-        // new webpack.ProvidePlugin({
-        //     $: "jquery",
-        //     jQuery: "jquery",
-        //     'window.jQuery': 'jquery'
-        // }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            'window.jQuery': 'jquery',
+            '_': 'lodash',
+        }),
         new BabiliPlugin(),//解决es6代码压缩问题
         new webpack.DllReferencePlugin({
             context: path.join(__dirname, "dest/vendor"),
