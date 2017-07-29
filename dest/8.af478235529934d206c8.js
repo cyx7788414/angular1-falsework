@@ -1,2 +1,0 @@
-webpackJsonp([8],{23:function(a,b,c){c.e(17).then(function(){[c(36)]}).catch(c.oe),Promise.all([new Promise(function(a){a()}).then(c.bind(null,9)),c.e(18).then(c.bind(null,35))]).then(function([{app:b},a]){console.log(b,a,a.mock),b.register.controller('foreController',['$scope',function(){(function(){console.log('fore')})()}])}).catch(function(a){console.log(a)})}});
-//# sourceMappingURL=8.af478235529934d206c8.js.map

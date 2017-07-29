@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/main/views/forethird.html"],"names":[],"mappings":"kCAAA,U","file":"11.ea68457106358bcf2dd5.js","sourcesContent":["module.exports = \"<div ng-controller=forethirdController> third </div>\";\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/main/views/forethird.html\n// module id = 21\n// module chunks = 11"],"sourceRoot":""}

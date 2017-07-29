@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/main/views/foreindex.html"],"names":[],"mappings":"kCAAA,U","file":"13.7080d1917e4d5da5b78d.js","sourcesContent":["module.exports = \"<div ng-controller=foreindexController> 这里就是首页 </div>\";\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/main/views/foreindex.html\n// module id = 19\n// module chunks = 13"],"sourceRoot":""}
