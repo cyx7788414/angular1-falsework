@@ -1,0 +1,2 @@
+webpackJsonp([2],{37:function(a,b,c){Promise.all([new Promise(function(a){a()}).then(c.bind(null,8))]).then(function([{app:a}]){a.register.controller('majorheaderController',['$scope',function(){(function(){})()}])}).catch(function(a){console.log(a)})}});
+//# sourceMappingURL=2.0fe37425a44ce942b541.js.map

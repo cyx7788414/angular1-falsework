@@ -6,5 +6,6 @@ var vendors = [
     '@uirouter/angularjs',
     'angular-ui-bootstrap',
     'lodash',
+    'angular-cookies',
 ];
 module.exports = vendors;

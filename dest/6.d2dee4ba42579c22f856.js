@@ -1,2 +1,0 @@
-webpackJsonp([6],{33:function(a,b,c){c.e(25).then(function(){[c(49)]}).catch(c.oe),Promise.all([new Promise(function(a){a()}).then(c.bind(null,7))]).then(function([{app:a}]){a.register.controller('loginController',['$scope','$state',function(a,b){a.login=function(){b.go('index.major')};(function(){})()}])}).catch(function(a){console.log(a)})}});
-//# sourceMappingURL=6.d2dee4ba42579c22f856.js.map

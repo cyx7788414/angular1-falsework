@@ -1,6 +1,26 @@
 define(function() {
     var init = function(app) {
 
+        app.factory('httpinterceptorFactory', ['$cookies', 
+            function($cookies) {
+                var interceptor = {
+                    request: function(config) {
+                        return config;
+                    },
+                    response: function(response) {
+                        return response;
+                    }
+                };
+                return interceptor;
+            }
+        ]);
+
+        app.config(['$httpProvider', 
+            function($httpProvider) {
+                $httpProvider.interceptors.push('httpinterceptorFactory');
+            }
+        ]);
+
         window.controllerLoadChecker = function() {//全局保存已加载的contrllerName，用于确保在resolve模版时controller已注入
             var controllerList = {};
             var checkList = [];
