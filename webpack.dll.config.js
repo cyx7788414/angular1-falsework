@@ -89,28 +89,28 @@ module.exports = {
                 test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,  
                 use: [
                     {
-                        loader: 'url-loader?limit=10000&mimetype=application/font-woff' 
+                        loader: 'url-loader?limit=10000&mimetype=application/font-woff/&name=../vendor/[name]-[hash].[ext]' 
                     }
                 ] 
             }, {  
                 test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,  
                 use: [
                     {
-                        loader: 'url-loader?limit=10000&mimetype=application/octet-stream' 
+                        loader: 'url-loader?limit=10000&mimetype=application/octet-stream&name=../vendor/[name]-[hash].[ext]' 
                     }
                 ] 
             }, {  
                 test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,  
                 use: [
                     {
-                        loader: 'file-loader'  
+                        loader: 'file-loader?name=../vendor/[name]-[hash].[ext]'  
                     }
                 ]
             }, {  
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,  
                 use: [
                     {
-                        loader: "url-loader?limit=10000&mimetype=image/svg+xml"  
+                        loader: "url-loader?limit=10000&mimetype=image/svg+xml&name=../vendor/[name]-[hash].[ext]"  
                     }
                 ]
             }
