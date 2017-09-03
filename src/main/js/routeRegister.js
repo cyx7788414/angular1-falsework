@@ -9,9 +9,11 @@ define(function() {
             var paramsUrl = '';
             if (state.variables && state.variables.length > 0) {//url带参数
                 for (var x = 0; x < state.variables.length; x++) {
-                    array.push($stateParams[state.variables[x]]);
+                    var tempSplitArray = $stateParams[state.variables[x]].split('-');//处理-分割的路径
+                    //array.push($stateParams[state.variables[x]]);
+                    array = array.concat(tempSplitArray);
                 }
-                paramsUrl =  array.join('/');
+                paramsUrl = array.join('/');
             }
             basePath = state.basePath + paramsUrl;
             var controllerName = basePath.split('/').pop() + 'Controller';
