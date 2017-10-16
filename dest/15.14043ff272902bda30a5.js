@@ -1,0 +1,2 @@
+webpackJsonp([15],{26:function(a){a.exports="<div ng-controller=majorController class=major> <div ui-view=header></div> <div ui-view=body class=body></div> </div>"}});
+//# sourceMappingURL=15.14043ff272902bda30a5.js.map

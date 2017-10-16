@@ -4,7 +4,7 @@ var vendors = [
     'bootstrap-loader',
     'angular',
     '@uirouter/angularjs',
-    'angular-ui-bootstrap',
+    //'angular-ui-bootstrap',
     'lodash',
     'angular-cookies',
 ];

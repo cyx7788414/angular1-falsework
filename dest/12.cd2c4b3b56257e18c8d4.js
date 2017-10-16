@@ -1,0 +1,2 @@
+webpackJsonp([12],{29:function(a,b,c){Promise.all([new Promise(function(a){a()}).then(c.bind(null,7)),c.e(23).then(c.bind(null,44))]).then(function([{app:a},b]){console.log(b),a.lazyModuleInject([b]),a.register.controller('dashboardController',['$scope','uibDropdownService',function(a,b){console.log(b);(function(){})()}])}).catch(function(a){console.log(a)})}});
+//# sourceMappingURL=12.cd2c4b3b56257e18c8d4.js.map

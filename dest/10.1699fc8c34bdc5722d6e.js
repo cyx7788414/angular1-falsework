@@ -1,2 +1,0 @@
-webpackJsonp([10],{30:function(a,b,c){c.e(26).then(function(){[c(49)]}).catch(c.oe),Promise.all([new Promise(function(a){a()}).then(c.bind(null,8))]).then(function([{app:a}]){a.register.controller('foreheaderController',['$scope','$state',function(a,b){a.toLogIn=function(){b.go('index.fore.child',{page:'login'})};(function(){})()}])}).catch(function(a){console.log(a)})}});
-//# sourceMappingURL=10.1699fc8c34bdc5722d6e.js.map

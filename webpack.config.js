@@ -16,7 +16,7 @@ module.exports = {
         filename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'dest')
     },
-    devtool: "cheap-source-map",
+    devtool: "source-map",
     module: {
         rules: [
             {

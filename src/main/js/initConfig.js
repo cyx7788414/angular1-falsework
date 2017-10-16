@@ -1,4 +1,4 @@
-define(function() {
+define(['src/main/js/modulelazyload'], function(modulelazyload) {
     var init = function(app) {
 
         app.factory('httpinterceptorFactory', ['$cookies', 
@@ -60,8 +60,8 @@ define(function() {
         }();
 
 
-        app.config(['$controllerProvider', '$compileProvider', '$filterProvider', '$provide', //异步加载controller等
-            function($controllerProvider, $compileProvider, $filterProvider, $provide) {
+        app.config(['$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$injector', '$animateProvider',   //异步加载controller等
+            function($controllerProvider, $compileProvider, $filterProvider, $provide, $injector, $animateProvider) {
                 app.register = {
                     //controller: $controllerProvider.register,
                     controller: function() {
@@ -74,8 +74,12 @@ define(function() {
                     factory: $provide.factory,
                     service: $provide.service
                 };
+                modulelazyload.init(app, $controllerProvider, $compileProvider, $filterProvider, $provide, $injector, $animateProvider);
             }
         ]);
+        app.run(['$rootElement', function($rootElement) {
+            modulelazyload.initRootElement($rootElement);
+        }]);
 
         app.config(['$stateProvider', '$urlRouterProvider', //ui-route的导航设置
             function($stateProvider, $urlRouterProvider) {

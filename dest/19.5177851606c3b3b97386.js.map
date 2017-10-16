@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/main/views/foresecond.html"],"names":[],"mappings":"kCAAA,U","file":"19.5177851606c3b3b97386.js","sourcesContent":["module.exports = \"<div ng-controller=foresecondController> second </div>\";\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/main/views/foresecond.html\n// module id = 23\n// module chunks = 19"],"sourceRoot":""}
